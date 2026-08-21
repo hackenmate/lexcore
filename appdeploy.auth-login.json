@@ -1,0 +1,14 @@
+{
+  "template": "default",
+  "headline": "Acceso privado a LexCore",
+  "subtitle": "Expedientes, evidencia y consultas jurídicas en un espacio autenticado.",
+  "style": {
+    "mode": "light",
+    "accentColor": "#1c3045",
+    "backgroundColor": "#f4f3ef",
+    "panelColor": "#ffffff",
+    "textColor": "#14191f",
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "borderRadius": 14
+  }
+}
