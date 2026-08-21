@@ -1,13 +1,24 @@
 # LexCore Legal OS
 
-LegalTech B2B para gestión jurídica con expedientes privados, evidencia trazable, control de acceso por asunto, plazos determinísticos y asistencia IA con Citation Gate.
+MVP LegalTech B2B independiente para gestión jurídica con clientes, expedientes privados, tareas, evidencia y documentos protegidos por Supabase Row Level Security.
 
-## Estado
+## MVP independiente
 
-- Aplicación operativa: https://lexcore-legal-os-crgec3.v2.appdeploy.ai/
-- PostgreSQL/Supabase productivo provisionado en `sa-east-1`.
-- RLS, pgvector y esquema LegalTech creados y auditados.
-- AI Privacy Gate desactivado por defecto para datos confidenciales.
-- GitHub Pages se utiliza como landing pública; **no** ejecuta el backend ni almacena expedientes.
+- Frontend: GitHub Pages
+- Auth: Supabase Auth
+- Base de datos: PostgreSQL + RLS
+- Vector DB: pgvector + HNSW
+- Archivos: Supabase Storage privado
+- Public key: publishable key de Supabase; no hay `service_role` en el navegador
+- AppDeploy/ChatGPT: **no forman parte del runtime de este MVP**
+- IA externa: `NOT_CONFIGURED` hasta desplegar un backend privado/Edge Function con credenciales del lado servidor
 
-> No subir secretos, service-role keys, credenciales de proveedores ni documentos jurídicos reales a este repositorio.
+## URL
+
+https://hackenmate.github.io/lexcore/
+
+## Seguridad
+
+El acceso a clientes y expedientes depende de membresías y `matter_access`. Los documentos se almacenan en `legal-documents` y las políticas de Storage comprueban el expediente indicado en la primera carpeta de la ruta.
+
+No subir claves secretas, service-role keys, documentos jurídicos reales ni credenciales de proveedores a GitHub.
